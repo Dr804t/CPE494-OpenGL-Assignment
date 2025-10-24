@@ -74,7 +74,7 @@ int main()
 
     // configure global opengl state
     glEnable(GL_DEPTH_TEST);
-    stbi_set_flip_vertically_on_load(true);
+    stbi_set_flip_vertically_on_load(false);
 
     // build and compile shaders
     Shader lightingShader("6.multiple_lights.vs", "6.multiple_lights.fs");
@@ -369,7 +369,7 @@ int main()
 
     // load models
     // -----------
-    Model ourModel(FileSystem::getPath("resources/objects/enderdragon/enderdragon.obj"));
+    Model ourModel(FileSystem::getPath("resources/objects/enderdragon/scene.obj"));
 
 
     // render loop
