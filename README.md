@@ -3,7 +3,8 @@
 this is a mimic 3d animation of minecraft end dimension
 
 
-[Video](https://github.com/user-attachments/assets/802ade69-ff9c-436c-9643-a5f02be74b52)
+[Video](https://github.com/user-attachments/assets/7c4706c2-d9fa-468e-a856-18083a8b3da2)
+
 
 
 ## Credits & License
