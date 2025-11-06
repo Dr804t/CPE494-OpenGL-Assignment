@@ -7,6 +7,12 @@ this is a mimic 3d animation of minecraft end dimension
 
 
 
+## Assignment 3 : Loading 3D model, camera following, object intersection
+
+
+[Video](https://github.com/user-attachments/assets/a987b2a8-58a0-4aa2-9548-53191473175c)
+
+
 ## Credits & License
 
 This 3D model of the Ender Dragon was created by Tony’s Classics (Sketchfab user `marlborobenz`).
