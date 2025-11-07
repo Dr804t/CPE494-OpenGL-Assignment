@@ -10,7 +10,7 @@ this is a mimic 3d animation of minecraft end dimension
 ## Assignment 3 : Loading 3D model, camera following, object intersection
 
 
-[Video](https://github.com/user-attachments/assets/a987b2a8-58a0-4aa2-9548-53191473175c)
+[Video](https://github.com/user-attachments/assets/38b6a987-f911-4037-8b54-fefa6663b266)
 
 
 ## Credits & License
