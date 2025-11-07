@@ -120,7 +120,7 @@ float deltaTime = 0.0f;
 float lastFrame = 0.0f;
 
 // model position
-glm::vec3 modelPosition = glm::vec3(0.0f, 0.0f, -8.0f);
+glm::vec3 modelPosition = glm::vec3(5.0f, 0.0f, -5.0f);
 bool isMoving = false;
 float modelYaw = 180.0f;
 
@@ -140,12 +140,13 @@ float maxWorldSpeed = 20.0f;     // cap speed
 float speedIncreaseRate = 0.5f;  // units per second
 
 float spawnZ = -50.0f;           // where new obstacles spawn
-float obstacleSpacing = 10.0f;   // distance between obstacles
+float obstacleSpacing = 20.0f;   // distance between obstacles
 float laneOffset = 2.5f;         // X distance for lanes
 int numObstacles = 10;           // pool size
 
 int main()
 {
+    srand(static_cast<unsigned>(time(nullptr)));
     // glfw: initialize and configure
     // ------------------------------
     glfwInit();
@@ -254,9 +255,14 @@ int main()
     for (int i = 0; i < numObstacles; i++)
     {
         float z = -i * obstacleSpacing - 10.0f;
-        float x = ((i % 3) - 1) * laneOffset; // left, center, right
+
+        // pick random lane: -1, 0, or 1
+        int lane = (rand() % 3) - 1;
+        float x = lane * laneOffset;
+
         obstacles.push_back({ glm::vec3(x, 1.0f, z), glm::vec3(2.0f, 2.0f, 2.0f) });
     }
+
 
 
     // render loop
@@ -434,7 +440,7 @@ int main()
 // process input
 void processInput(GLFWwindow* window)
 {
-    isMoving = true;
+    isMoving = false;
     if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
         glfwSetWindowShouldClose(window, true);
 
@@ -456,13 +462,13 @@ void processInput(GLFWwindow* window)
     {
         modelPosition.z -= speed;
 		moveDir.z -= 1.0f;
-        /*isMoving = true;*/
+        isMoving = true;
     }
     if (glfwGetKey(window, GLFW_KEY_DOWN) == GLFW_PRESS)
     {
         modelPosition.z += speed;
         moveDir.z += 1.0f;
-        /*isMoving = true;*/
+        isMoving = true;
     }
     /*if (glfwGetKey(window, GLFW_KEY_LEFT) == GLFW_PRESS)
     {
@@ -478,9 +484,17 @@ void processInput(GLFWwindow* window)
     }*/
     float laneSpeed = 6.0f * deltaTime;
     if (glfwGetKey(window, GLFW_KEY_LEFT) == GLFW_PRESS)
+    {
         modelPosition.x = glm::max(modelPosition.x - laneSpeed, -laneOffset);
+        moveDir.x -= 1.0f;
+        isMoving = true;
+    }
     if (glfwGetKey(window, GLFW_KEY_RIGHT) == GLFW_PRESS)
+    {
         modelPosition.x = glm::min(modelPosition.x + laneSpeed, laneOffset);
+        moveDir.x += 1.0f;
+        isMoving = true;
+    }
     static bool isJumping = false;
     static float jumpVelocity = 0.0f;
     static float gravity = -9.8f;
