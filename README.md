@@ -8,6 +8,7 @@ this is a mimic 3d animation of minecraft end dimension
 
 
 ## Assignment 3 : Loading 3D model, camera following, object intersection
+this is a simple infinite running game
 
 
 [Video](https://github.com/user-attachments/assets/38b6a987-f911-4037-8b54-fefa6663b266)
