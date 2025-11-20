@@ -14,6 +14,13 @@ this is a simple infinite running game
 [Video](https://github.com/user-attachments/assets/38b6a987-f911-4037-8b54-fefa6663b266)
 
 
+## Assignment 4 : Character Animation Control
+this is a blended Shooting Animation
+
+
+https://github.com/user-attachments/assets/f862571a-7ac2-4826-9386-18d58a8568e2
+
+
 ## Credits & License
 
 ### Assignment 2 : 3D Kinetic Sculpture animation
